@@ -1,9 +1,30 @@
 :local {
   $black: #000;
   $white: #fff;
+  $blue-text: #2A95BF;
+  $panel-text-color: #8D8D8D;
+  $grey-text: #818181;
+  $panel-background-color: #F7F7F7;
+  $people-background-color: #F5F5F5;
 
   .booking-app {
     font-family: 'Roboto';
+
+    .row {
+      padding: 15px;
+      display: flex;
+    }
+
+    .panel {
+      background-color: $panel-background-color;
+      padding: 15px 36px;
+      width: 100%;
+      text-align: center;
+      color: $panel-text-color;
+      font-size: 16px;
+      font-weight: 300;
+      border-radius: 5px;
+    }
 
     .header {
       background: linear-gradient(to top right, #3CB9C0, #2CAACA);
@@ -31,7 +52,37 @@
         fill: $white;
         cursor: pointer;
       }
+    }
 
+    .health-professionals {
+      background-color: $people-background-color;
+
+      .person {
+        background-color: $white;
+        margin-bottom: 10px;
+        
+        .photo-container {
+          flex-basis: 100px;
+
+          img {
+            width: 80px;
+            border-radius: 50%;
+          }
+
+        }
+
+        .name {
+          font-size: 22px;
+          line-height: 25px;
+          color: $blue-text;
+        }
+
+        .title {
+          font-size: 14px;
+          line-height: 16px;
+          color: $grey-text;
+        }
+      }
     }
   }
 }

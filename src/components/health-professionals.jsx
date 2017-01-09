@@ -1,24 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class HealthProfessionals extends Component {
+import Person from './person';
 
-  render() {
-    const people = this.props.people.map(person =>
-      (
-        <div>
-          <p>{person.name}</p>
-          <p>{person.title}</p>
-        </div>
-      )
-    );
+import styling from '../styling/main.scss';
 
-    return (
-      <div>
-        { people }
-      </div>
-    );
-  }
-}
+const HealthProfessionals = (props) => {
+  const people = props.people.map(person =>
+    <Person name={person.name} title={person.title} image={person.image} />
+  );
+
+  return (
+    <div className={styling['health-professionals']}>
+      { people }
+    </div>
+  );
+};
 
 HealthProfessionals.propTypes = {
   people: React.PropTypes.arrayOf(React.PropTypes.object),

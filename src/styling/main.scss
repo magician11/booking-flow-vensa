@@ -2,7 +2,34 @@
   $black: #000;
   $white: #fff;
 
-  .your-app {
-    font-family: Arial;
+  .booking-app {
+    font-family: 'Roboto';
+
+    .header {
+      background: linear-gradient(to top right, #3CB9C0, #2CAACA);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      
+      a {
+        font-size: 12px;
+        line-height: 14px;
+        color: $white;
+        text-decoration: none;
+      }
+
+      .vensa-logo {
+        width: 74.74px;
+        fill: $white;
+      }
+
+      .back-arrow {
+        width: 19.35px;
+        fill: $white;
+        cursor: pointer;
+      }
+
+    }
   }
 }

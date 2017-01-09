@@ -1,24 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
-import Booking from './components/index';
-// import About from './components/about';
-// import People from './components/people';
-// import Person from './components/person';
-// import NoMatch from './components/unknown';
-// import Home from './components/home';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import BookingApp from './components/index';
+import People from './components/health-professionals';
+import PersonProfile from './components/person-profile';
+import NoMatch from './components/unknown';
 
 // remove margins
 document.body.style.margin = 0;
 
-require('bootstrap/dist/css/bootstrap.css');
-
-ReactDOM.render((<Router history={browserHistory}>
-  <Route path="/" component={Booking}>
-    {/* <IndexRoute component={Home} />
-      <Route path="/health-professional/:personId" component={Person} />
-      </Route>
-    <Route path="*" component={NoMatch} /> */}
+ReactDOM.render((<Router history={hashHistory}>
+  <Route path="/" component={BookingApp}>
+    <IndexRoute component={People} />
+    <Route path="/health-professional/:personId" component={PersonProfile} />
+    <Route path="*" component={NoMatch} />
   </Route>
 </Router>
 ), document.getElementById('app'));

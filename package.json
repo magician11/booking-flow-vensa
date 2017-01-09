@@ -30,10 +30,8 @@
     "webpack-dev-server": "^1.16.1"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
     "html-webpack-plugin": "^2.22.0",
     "react": "^15.3.2",
-    "react-bootstrap": "^0.30.7",
     "react-dom": "^15.3.2",
     "react-router": "^3.0.0",
     "webpack": "^1.13.2"

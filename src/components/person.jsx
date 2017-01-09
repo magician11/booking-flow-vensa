@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import styling from '../styling/main.scss';
 
@@ -7,7 +8,7 @@ const Person = props =>
   <div className={styling.person}>
     <div className={styling.row}>
       <div className={styling['photo-container']}>
-        <img src={props.image} alt={props.name} />
+        <Link to="/health-professional/1"><img src={props.image} alt={props.name} /></Link>
       </div>
       <div>
         <div className={styling.name}>{props.name}</div>

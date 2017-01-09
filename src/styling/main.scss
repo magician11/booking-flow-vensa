@@ -6,13 +6,13 @@
   $grey-text: #818181;
   $panel-background-color: #F7F7F7;
   $people-background-color: #F5F5F5;
+  $person-profile-name: #6C6C6C;
 
   .booking-app {
     font-family: 'Roboto';
 
-    .row {
-      padding: 15px;
-      display: flex;
+    .center {
+      text-align: center;
     }
 
     .panel {
@@ -54,13 +54,38 @@
       }
     }
 
+    .person-profile {
+      padding: 0 15px;
+
+      .image {
+        margin: 40px 0 25px;
+        
+        img {
+          width: 130px;
+          border-radius: 50%;
+        }
+      }
+
+      .name {
+        color: $person-profile-name;
+        font-size: 21px;
+        line-height: 24px;
+        font-weight: 500;
+      }
+    }
+
     .health-professionals {
       background-color: $people-background-color;
+
+      .row {
+        padding: 15px;
+        display: flex;
+      }
 
       .person {
         background-color: $white;
         margin-bottom: 10px;
-        
+
         .photo-container {
           flex-basis: 100px;
 

@@ -11,12 +11,14 @@
       align-items: center;
       justify-content: space-between;
       padding: 15px;
-      
+      box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+
       a {
         font-size: 12px;
         line-height: 14px;
         color: $white;
         text-decoration: none;
+        font-weight: 300; // light
       }
 
       .vensa-logo {

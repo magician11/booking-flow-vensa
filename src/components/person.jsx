@@ -42,6 +42,15 @@ class Person extends Component {
   render() {
     const person = this.props.personData;
 
+    let availableTimes;
+    if (person.availableTimes) {
+      availableTimes = (<div className={styling.times}>{person.availableTimes.map(time => (
+        <div className={styling.panel}>{time}</div>
+      ))}</div>);
+    } else {
+      availableTimes = <div className={styling.panel}>No appointment available for this date.</div>;
+    }
+
     return (
       <div className={styling.person}>
         <div className={styling.row}>
@@ -54,9 +63,7 @@ class Person extends Component {
           </div>
         </div>
         <div className={styling.row}>
-          <div className={styling.panel}>
-            No appointment available for this date.
-          </div>
+          {availableTimes}
         </div>
         <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel={`Profile for ${person.name}`} style={customStyles}>
           <PersonProfile personData={person} onCloseModal={this.closeModal} />

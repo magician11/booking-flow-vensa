@@ -19,6 +19,12 @@ const PersonProfile = (props) => {
         </div>
         <button onClick={() => props.onCloseModal()}>Book an Appointment</button>
       </div>
+      <p className={styling.about}>{person.about}</p>
+      <hr />
+      <div className={styling.heading}>Languages spoken</div>
+      <ul className={styling.languages}>
+        {person.languages.map(language => <li>{language}</li>)}
+      </ul>
     </div>
   );
 };

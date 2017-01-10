@@ -8,6 +8,17 @@ import styling from '../styling/main.scss';
 // to be able to click directly on the image
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
+
+const customStyles = {
+  content: {
+    top: '3%',
+    left: '5%',
+    right: '5%',
+    bottom: '3%',
+    padding: '5px',
+  },
+};
+
 class Person extends Component {
   constructor() {
     super();
@@ -47,8 +58,8 @@ class Person extends Component {
             No appointment available for this date.
           </div>
         </div>
-        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel={`Profile for ${person.name}`}>
-          <PersonProfile personData={person} />
+        <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel={`Profile for ${person.name}`} style={customStyles}>
+          <PersonProfile personData={person} onCloseModal={this.closeModal} />
         </Modal>
       </div>
     );

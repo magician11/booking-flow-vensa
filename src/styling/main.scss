@@ -1,4 +1,8 @@
 :global {
+  body {
+    font-family: 'Roboto';
+  }
+
   .ReactModalPortal > div {
     opacity: 0;
   }
@@ -24,13 +28,15 @@
   $panel-background-color: #F7F7F7;
   $people-background-color: #F5F5F5;
   $person-profile-name: #6C6C6C;
-
-  font-family: 'Roboto';
+  $person-profile-title: #AFAFAF;
+  $button-colour: #2FACC7;
+  $button-border: #30AEC7;
 
   .center {
     text-align: center;
   }
 
+  /* profile for the modal */
   .person-profile {
     padding: 0 15px;
 
@@ -48,6 +54,24 @@
       font-size: 21px;
       line-height: 24px;
       font-weight: 500;
+    }
+
+    .title {
+      font-size: 17px;
+      line-height: 24px;
+      color: $person-profile-title;
+    }
+
+    button {
+      color: $button-colour;
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 20px;
+      padding: 22px 60px;
+      border-radius: 4px;
+      border: 1px solid $button-border;
+      background-color: $white;
+      margin-top: 30px;
     }
   }
 

@@ -17,9 +17,6 @@ import VensaLogo from '../svgs/vensa-logo';
 const showClick = msg => alert(msg);
 
 const customStyles = {
-  overlay: {
-    bottom: '33%',
-  },
   content: {
     top: '11%',
     left: '5%',

@@ -37,6 +37,7 @@ class HealthProfessionals extends Component {
           languages: ['English', 'French'],
           education: 'Meditation College, Nepal',
           location: '11 Soi Mu Ban Phin Thong Pa Tan Chiang Mai',
+          availableTimes: ['8:15', '8:30', '8:45', '9:00', '10:15', '13:30', '15:00'],
         },
         {
           name: 'Luke Skywalker',
@@ -46,6 +47,7 @@ class HealthProfessionals extends Component {
           languages: ['English'],
           education: 'The Force, Tatooine',
           location: '2265 Mission Street, San Francisco, CA, United States',
+          availableTimes: ['13:30', '15:00', '15:30', '16:00'],
         },
       ],
     };

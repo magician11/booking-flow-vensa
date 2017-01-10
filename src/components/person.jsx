@@ -8,7 +8,6 @@ import styling from '../styling/main.scss';
 // to be able to click directly on the image
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
-
 const customStyles = {
   content: {
     top: '3%',
@@ -58,7 +57,7 @@ class Person extends Component {
             <img src={person.image} alt={person.name} onClick={this.openModal} />
           </div>
           <div>
-            <div className={styling.name}>{person.name}</div>
+            <div className={styling.name} onClick={this.openModal}>{person.name}</div>
             <div className={styling.title}>{person.title}</div>
           </div>
         </div>

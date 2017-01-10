@@ -3,6 +3,7 @@
     font-family: 'Roboto';
   }
 
+  /* for the modal */
   .ReactModalPortal > div {
     opacity: 0;
   }
@@ -12,10 +13,16 @@
     background: rgba(0, 0, 0, 0.15);
     &--after-open {
       opacity: 1;
+      z-index: 11;
     }
     &--before-close {
       opacity: 0;
     }
+  }
+
+  /* for the calendar */
+  .DayPicker--horizontal {
+    margin: 15px auto 0;
   }
 }
 
@@ -35,6 +42,8 @@
   $button-border: #30AEC7;
   $horizontal-line: #D8D8D8;
   $profile-heading: #585656;
+  $calendar-bar: #177D91;
+  $calendar-icon: #33CCCC;
 
   .center {
     text-align: center;
@@ -149,29 +158,48 @@
 
     .header {
       background: linear-gradient(to top right, #3CB9C0, #2CAACA);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px;
       box-shadow: 0 3px 6px rgba(0,0,0,0.16);
 
-      a {
-        font-size: 12px;
-        line-height: 14px;
+      .topbar {
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+          font-size: 12px;
+          line-height: 14px;
+          color: $white;
+          text-decoration: none;
+          font-weight: 300; // light
+        }
+
+        .vensa-logo {
+          width: 74.74px;
+          fill: $white;
+        }
+
+        .back-arrow {
+          width: 19.35px;
+          fill: $white;
+          cursor: pointer;
+        }
+      }
+
+      .calendar-bar {
+        background-color: $calendar-bar;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        font-size: 16px;
+        line-height: 19px;
         color: $white;
-        text-decoration: none;
-        font-weight: 300; // light
-      }
 
-      .vensa-logo {
-        width: 74.74px;
-        fill: $white;
-      }
-
-      .back-arrow {
-        width: 19.35px;
-        fill: $white;
-        cursor: pointer;
+        svg {
+          width: 20px;
+          fill: $calendar-icon;
+        }
       }
     }
 

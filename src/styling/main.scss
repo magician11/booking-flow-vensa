@@ -78,31 +78,44 @@
       font-size: 17px;
       font-weight: 500;
       line-height: 20px;
-      padding: 22px 60px;
+      padding: 22px 55px;
       border-radius: 4px;
       border: 1px solid $button-border;
       background-color: $white;
       margin: 30px 0;
     }
 
-    .about {
+    .text {
       color: $person-profile-text;
       font-size: 17px;
       line-height: 23px;
-      margin-top: 0;
+      margin: 0 0 20px;
+
+      svg {
+        fill: $person-profile-text;
+        height: 15px;
+      }
     }
 
-    .heading {
+    .heading, .heading2 {
       margin: 30px 0;
       font-size: 17px;
       line-height: 20px;
-      color: $profile-heading;
       font-weight: 500;
     }
 
+    .heading {
+      color: $profile-heading;
+    }
+
+    .heading2 {
+      color: $button-border;
+    }
+
+    /* inspired by http://getbootstrap.com/css/#inline */
     .languages {
       list-style: none;
-      margin: 0;
+      margin: 0 0 20px;
       padding: 0;
 
       li {
@@ -112,6 +125,11 @@
         font-size: 17px;
         line-height: 30px;
       }
+    }
+
+    .map {
+      border: none;
+      height: 288px;
     }
   }
 

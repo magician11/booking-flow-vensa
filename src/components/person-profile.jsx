@@ -1,5 +1,7 @@
 import React from 'react';
 
+import LocationPin from '../svgs/location';
+
 import styling from '../styling/main.scss';
 
 const PersonProfile = (props) => {
@@ -19,12 +21,19 @@ const PersonProfile = (props) => {
         </div>
         <button onClick={() => props.onCloseModal()}>Book an Appointment</button>
       </div>
-      <p className={styling.about}>{person.about}</p>
+      <p className={styling.text}>{person.about}</p>
       <hr />
       <div className={styling.heading}>Languages spoken</div>
       <ul className={styling.languages}>
         {person.languages.map(language => <li>{language}</li>)}
       </ul>
+      <hr />
+      <div className={styling.heading}>Education</div>
+      <p className={styling.text}> - {person.education}</p>
+      <hr />
+      <div className={styling.heading2}>Mission Bay Doctors</div>
+      <p className={styling.text}><LocationPin /> {person.location}</p>
+      <iframe className={styling.map} src={`https://www.google.com/maps/embed/v1/place?q=${person.location}&zoom=15&key=AIzaSyCpVb6nJ7JCJwHvRUBWCZrOWBU54qc6JuU`} />
     </div>
   );
 };

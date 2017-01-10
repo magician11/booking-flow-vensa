@@ -17,7 +17,7 @@ class PersonProfile extends Component {
   }
 
   render() {
-    const person = this.state.person;
+    const person = this.props.personData;
 
     return (
       <div className={styling['person-profile']}>
@@ -34,10 +34,13 @@ class PersonProfile extends Component {
   }
 }
 
+/* eslint-disable react/no-unused-prop-types */
 PersonProfile.propTypes = {
-  name: React.PropTypes.string,
-  title: React.PropTypes.string,
-  image: React.PropTypes.string,
+  personData: React.PropTypes.shape({
+    name: React.PropTypes.string.isRequired,
+    title: React.PropTypes.string.isRequired,
+    image: React.PropTypes.string.isRequired,
+  }),
 };
 
 export default PersonProfile;

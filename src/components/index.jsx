@@ -1,16 +1,14 @@
 import React from 'react';
 
+import People from './health-professionals';
+
 import styling from '../styling/main.scss';
 
-const BookingApp = props =>
+const BookingApp = () =>
 (
   <div className={styling['booking-app']}>
-    {props.children}
+    <People />
   </div>
 );
-
-BookingApp.propTypes = {
-  children: React.PropTypes.node,
-};
 
 export default BookingApp;

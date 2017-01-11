@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from './header';
+import Footer from './footer';
 import Person from './person';
 
 import styling from '../styling/main.scss';
@@ -74,6 +75,7 @@ class HealthProfessionals extends Component {
         <div className={styling['health-professionals']}>
           { people }
         </div>
+        <Footer />
       </div>
     );
   }

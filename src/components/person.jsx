@@ -15,6 +15,7 @@ const customStyles = {
     right: '0',
     bottom: '0',
     padding: '5px',
+    border: 'none',
   },
 };
 

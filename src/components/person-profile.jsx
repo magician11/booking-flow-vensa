@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LocationPin from '../svgs/location';
+import CloseIcon from '../svgs/close';
 
 import styling from '../styling/main.scss';
 
@@ -34,6 +35,7 @@ const PersonProfile = (props) => {
       <div className={styling.heading2}>Mission Bay Doctors</div>
       <p className={styling.text}><LocationPin /> {person.location}</p>
       <iframe className={styling.map} src={`https://www.google.com/maps/embed/v1/place?q=${person.location}&zoom=15&key=AIzaSyCpVb6nJ7JCJwHvRUBWCZrOWBU54qc6JuU`} />
+      <CloseIcon className={styling.close} onClick={() => props.onCloseModal()} />
     </div>
   );
 };

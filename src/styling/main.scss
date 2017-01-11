@@ -44,6 +44,7 @@
   $profile-heading: #585656;
   $calendar-bar: #177D91;
   $calendar-icon: #33CCCC;
+  $close-button: #3CB9C0;
 
   .center {
     text-align: center;
@@ -140,6 +141,19 @@
       border: none;
       height: 288px;
       width: 100%;
+    }
+
+    .close {
+      height: 28px;
+      fill: $white;
+      background-color: $close-button;
+      padding: 22px;
+      border-radius: 50%;
+      position: fixed;
+      bottom: 40px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
     }
   }
 

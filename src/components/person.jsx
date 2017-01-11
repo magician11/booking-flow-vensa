@@ -10,10 +10,10 @@ import styling from '../styling/main.scss';
 
 const customStyles = {
   content: {
-    top: '3%',
-    left: '5%',
-    right: '5%',
-    bottom: '3%',
+    top: '0',
+    left: '0',
+    right: '0',
+    bottom: '0',
     padding: '5px',
   },
 };

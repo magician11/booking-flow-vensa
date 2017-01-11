@@ -50,7 +50,14 @@ class HealthProfessionals extends Component {
           availableTimes: ['13:30', '15:00', '15:30', '16:00'],
         },
       ],
+      timeOfDayIndex: 0,
     };
+
+    this.selectedTimeOfDay = this.selectedTimeOfDay.bind(this);
+  }
+
+  selectedTimeOfDay(timeOfDayIndex) {
+    this.setState({ timeOfDayIndex });
   }
 
   render() {
@@ -60,7 +67,10 @@ class HealthProfessionals extends Component {
 
     return (
       <div>
-        <Header />
+        <Header
+          timeOfDayIndex={this.state.timeOfDayIndex}
+          timeOfDaySelected={this.selectedTimeOfDay}
+        />
         <div className={styling['health-professionals']}>
           { people }
         </div>

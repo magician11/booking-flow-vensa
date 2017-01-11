@@ -4,6 +4,9 @@ import Modal from 'react-modal';
 import moment from 'moment';
 
 import 'react-dates/lib/css/_datepicker.css';
+
+import Date from './date';
+
 import styling from '../styling/main.scss';
 
 import BackArrow from '../svgs/back-arrow';
@@ -31,11 +34,15 @@ class Header extends Component {
     this.state = {
       date: moment(),
       modalIsOpen: false,
+      selectedDateIndex: 0,
+      timeOfDayIndex: 0,
     };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.updateDate = this.updateDate.bind(this);
+    this.updateSelectedDate = this.updateSelectedDate.bind(this);
+    this.updateSelectedTimeOfDay = this.updateSelectedTimeOfDay.bind(this);
   }
 
   openModal() {
@@ -46,6 +53,14 @@ class Header extends Component {
     this.setState({ modalIsOpen: false });
   }
 
+  updateSelectedDate(selectedDateIndex) {
+    this.setState({ selectedDateIndex });
+  }
+
+  updateSelectedTimeOfDay(timeOfDayIndex) {
+    this.setState({ timeOfDayIndex });
+  }
+
   updateDate(date) {
     this.setState({
       date,
@@ -54,6 +69,20 @@ class Header extends Component {
   }
 
   render() {
+    const dates = [];
+    for (let i = 0; i < 5; i += 1) {
+      const selected = (i === this.state.selectedDateIndex) ? 'selected' : '';
+      dates.push(<Date date={moment(this.state.date).add(i, 'd')} selected={selected} dateSelected={() => this.updateSelectedDate(i)} />);
+    }
+
+    const timesOfDay = [];
+    ['Morning', 'Afternoon', 'Evening'].map((timeOfDay, i) => {
+      const classes = (this.state.timeOfDayIndex === i) ? styling.selected : '';
+      return timesOfDay.push(
+        <div className={classes} onClick={() => this.updateSelectedTimeOfDay(i)}>{timeOfDay}</div>
+      );
+    });
+
     return (
       <div className={styling.header}>
         <div className={styling.topbar}>
@@ -62,8 +91,16 @@ class Header extends Component {
           <a href="/help" onClick={(e) => { e.preventDefault(); showClick('getting help...'); }}>HELP</a>
         </div>
         <div className={styling['calendar-bar']} onClick={this.openModal}>
-          <div className={styling.month}>{this.state.date.format('dddd, Do MMM YYYY')}</div>
+          <div className={styling.month}>{this.state.date.format('MMMM')}</div>
           <CalendarIcon />
+        </div>
+        <div className={styling['date-selection']}>
+          <div className={styling.dates}>
+            { dates }
+          </div>
+        </div>
+        <div className={styling['time-selection']}>
+          {timesOfDay}
         </div>
         <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal} contentLabel={'Date Selector'} style={customStyles}>
           <DayPicker
@@ -76,5 +113,10 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  timeOfDayIndex: React.PropTypes.number,
+  timeOfDaySelected: React.PropTypes.func,
+};
 
 export default Header;

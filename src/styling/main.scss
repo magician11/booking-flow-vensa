@@ -42,7 +42,7 @@
   $button-border: #30AEC7;
   $horizontal-line: #D8D8D8;
   $profile-heading: #585656;
-  $calendar-bar: #177D91;
+  $calendar-dark: #177D91;
   $calendar-icon: #33CCCC;
   $close-button: #3CB9C0;
 
@@ -202,7 +202,7 @@
       }
 
       .calendar-bar {
-        background-color: $calendar-bar;
+        background-color: $calendar-dark;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -210,10 +210,70 @@
         font-size: 16px;
         line-height: 19px;
         color: $white;
+        text-transform: uppercase;
 
         svg {
           width: 20px;
           fill: $calendar-icon;
+        }
+      }
+
+      .date-selection {
+        margin: 0 10px;
+
+        .dates {
+          display: flex;
+          justify-content: space-around;
+          text-align: center;
+          color: $white;
+          margin: 10px 0;
+
+          > div {
+            padding: 10px 20px;
+
+            &.selected {
+              background-color: $calendar-dark;
+              border-radius: 50%;
+            }
+          }
+
+          .date {
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: 300;
+          }
+
+          .day {
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: 300;
+            text-transform: lowercase;
+          }
+        }
+      }
+
+      .time-selection {
+        display: flex;
+        justify-content: space-around;
+        color: $white;
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 300;
+        padding-bottom: 15px;
+        margin: 0 10px;
+
+        > div {
+          padding: 10px 20px;
+          border: 1px solid transparent;
+
+          &.selected {
+            border: 1px solid $white;
+            border-radius: 19px;
+          }
+
+          &.disabled {
+            color: rgba($white, 0.45);
+          }
         }
       }
     }
